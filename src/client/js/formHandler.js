@@ -3,44 +3,14 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    
-    
-    if (Client.checkForURL((formText)) {
-        console.log("::: Form Submitted :::")
+    checkForName(formText)
 
-        postData('http://localhost:8080/test')
-
-        .then(function(res) {
-        document.getElementById('polarity').innerHTML = 'Polarity: ' + polarityChecker(res.scrore_tag);
-        })
-
-    }   
-
-}
-
-const polarityChecker = (score) => {
-    let display;
-    switch (score) {
-        case 'P+':
-            display = 'strong positive';
-            break;
-        case 'P':
-            display = 'positive';
-            break;
-        case 'NEU':
-            display = 'neutral';
-            break;
-        case 'N':
-            display = 'negative';
-            break;
-        case 'N+':
-            display = 'strong negative';
-            break;
-        case 'NONE':
-            display = 'without sentiment';
-    }
-    return display.toUpperCase();
+    console.log("::: Form Submitted :::")
+    fetch('http://localhost:8080/test')
+    .then(res => res.json())
+    .then(function(res) {
+        document.getElementById('results').innerHTML = res.message
+    })
 }
 
 export { handleSubmit }
-export { polarityChecker }
