@@ -10,7 +10,7 @@ function handleSubmit(event) {
         postData('http://localhost:8080/api', {url: formText})
 
         .then(function(res) {
-            document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
+            document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         })
     } else {
         alert('Invalid URL.');
