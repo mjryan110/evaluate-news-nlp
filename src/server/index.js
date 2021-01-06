@@ -25,7 +25,7 @@ console.log(__dirname)
 
 //API
 const apiKey = process.env.API_KEY
-const baseURL = "https://api.meaningcloud.com/sentiment-2.1?"
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 console.log(`Your API key is ${process.env.API_KEY}`);
 let userInput = []
 
@@ -51,8 +51,8 @@ app.post('/api', async function(req, res) {
     const mcData = await response.json()
     console.log(mcData)
     res.send(mcData)
-    projectData = {
-        scrore_tag : mcData.scrore_tag
+    const projectData = {
+        agreement : mcData.agreement
     }
 
     res.send(projectData);
