@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ path: 'evaluate-news-nlp/.env'});
 
 var path = require('path')
 const express = require('express')
