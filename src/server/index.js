@@ -34,7 +34,7 @@ let userInput = []
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
 app.get('/test', function (req, res) {
@@ -51,7 +51,7 @@ app.post('/api', async function(req, res) {
     const mcData = await response.json()
     console.log(mcData)
     res.send(mcData)
-    const projectData = {
+    projectData = {
         scrore_tag : mcData.scrore_tag
     }
 
