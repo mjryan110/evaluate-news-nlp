@@ -12,9 +12,9 @@ function handleSubmit(event) {
         .then(function(res) {
             document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         })
-    } else {
-        alert('Invalid URL.');
-    }
+        } else {
+            alert('Invalid URL.');
+        }
 }
 
 const postData = async(url = '', data = {}) => {
