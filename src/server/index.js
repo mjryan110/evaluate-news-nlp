@@ -1,19 +1,18 @@
-const dotenv = require('dotenv');
-dotenv.config({ path: '.env'});
-
 var path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch');
-const mockAPIResponse = require('./mockAPI.js')
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 // start up app
 const app = express()
 
 //cors
 const cors = require('cors');
-
 app.use(cors());
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
@@ -34,12 +33,7 @@ let userInput = []
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+    })
 
 //Post route
 app.post('/api', async function(req, res) {
