@@ -13,9 +13,9 @@ const app = express()
 //cors
 const cors = require('cors');
 
-app.use(cors());;
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 //Initialize the main project folder
@@ -33,8 +33,8 @@ let userInput = []
 
 
 app.get('/', function (req, res) {
-    //res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile('dist/index.html')
+    //res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
 app.get('/test', function (req, res) {

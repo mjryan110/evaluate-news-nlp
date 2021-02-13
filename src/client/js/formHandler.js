@@ -31,6 +31,7 @@ const postData = async(url = '', data = {}) => {
 
     try {
         const newData = await response.json();
+        console.log('Data Received:', newData)
         return newData;
     } catch(error) {
         console.log('error', error);
