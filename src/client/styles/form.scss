@@ -1,8 +1,9 @@
+$border-color: black;
+
 form {
-    border: 1px solid black;
+    border: 1px solid $border-color;
     border-radius: 5px;
-    padding: 40px;
-    background-color: gray;
+    padding: 20px;
 }
 
 input {
