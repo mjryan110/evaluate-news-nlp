@@ -5,12 +5,13 @@ function handleSubmit(event) {
     let formText = document.getElementById('url').value
     
     if(Client.checkForName(formText)) {
-        console.log("::: Form Submitted :::")
-
+        
         postData('http://localhost:8080/api', {url: formText})
 
         .then(function(res) {
             document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
+            document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
+            document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
         })
         } else {
             alert('Invalid URL.');
