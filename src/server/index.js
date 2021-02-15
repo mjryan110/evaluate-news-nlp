@@ -22,8 +22,14 @@ app.use(express.static('dist'))
 const apiKey = process.env.API_KEY
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 console.log(`Your API key is ${process.env.API_KEY}`);
+
 let userURL = []
 
+const port = 8080;
+
+app.listen(port, function () {
+    console.log(`Running on localhost: ${port}`)
+})
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -47,10 +53,4 @@ app.post('/api', async function(req, res) {
 
     res.send(projectData);
 
-})
-
-const port = 8080;
-
-app.listen(port, function () {
-    console.log(`Running on localhost: ${port}`)
 })
