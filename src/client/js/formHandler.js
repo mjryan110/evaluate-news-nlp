@@ -18,7 +18,7 @@ function handleSubmit(event) {
         }
 }
 
-const postData = async(url = '', data = {}) => {
+const postData = async(url = "", data = {}) => {
     console.log('Analyzing', data);
     const response = await fetch(url, {
         method: 'POST',
